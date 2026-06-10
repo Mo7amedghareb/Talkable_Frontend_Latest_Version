@@ -1,0 +1,328 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: #f3f0fb;
+}
+
+/* ✅ Navbar */
+.navbar {
+    background: #ffffff;
+    padding: 15px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* اللوجو */
+.logo {
+    width: 240px;
+}
+
+/* اللينكات */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-links li {
+    cursor: pointer;
+    color: #5b3cc4;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* العنصر النشط */
+.nav-links .active {
+    background: #e6e0ff;
+    border-bottom: 3px solid #5b3cc4;
+}
+
+/* الصورة الشخصية */
+.avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 3px solid #5b3cc4;
+    object-fit: cover;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: #f3f0fb;
+}
+
+/* ==================== Rating Page ==================== */
+.rating-page {
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+/* Header */
+.rating-header {
+    margin-bottom: 20px;
+}
+
+.rating-header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1f1f1f;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Rating Stars */
+.rating-section {
+    margin-bottom: 40px;
+}
+
+.rating-question {
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.stars {
+    font-size: 52px;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.stars .star {
+    transition: all 0.2s;
+}
+
+.stars .star:hover,
+.stars .star.active {
+    color: #5b3cc4;
+}
+
+/* Comment Section */
+.comment-section {
+    margin-bottom: 40px;
+    text-align: right;
+}
+
+.comment-label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#reviewText {
+    width: 100%;
+    height: 120px;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+    transition: border 0.3s;
+}
+
+#reviewText:focus {
+    border-color: #5b3cc4;
+}
+
+.char-count {
+    text-align: left;
+    font-size: 14px;
+    color: #777;
+    margin-top: 6px;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.btn-cancel {
+    padding: 14px 40px;
+    background: #e5e5e5;
+    color: #333;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-cancel:hover {
+    background: #d5d5d5;
+}
+
+.btn-confirm {
+    padding: 14px 40px;
+    background-color:#5b3cc4 ;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 6px 20px rgba(91, 60, 196, 0.3);
+}
+
+.btn-confirm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(91, 60, 196, 0.4);
+}
+
+/* Footer */
+.footer {
+    background: #f4f4f6;
+    padding: 70px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 100px;
+}
+
+.footer-brand {
+    max-width: 400px;
+}
+
+.footer-brand h2 {
+    color: #5b3cc4;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.footer-brand p {
+    color: #777;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.footer-brand span {
+    color: #999;
+    font-size: 14px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.column h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.column a {
+    display: block;
+    text-decoration: underline;
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.column a:hover {
+    color: #5b3cc4;
+}
+
+/* ✅ Footer */
+.footer {
+    background: #f4f4f6;
+    padding: 70px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* ✅ Right Brand Section */
+.footer-brand {
+    max-width: 400px;
+}
+
+.footer-brand h2 {
+    color: #5b3cc4;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.footer-brand p {
+    color: #777;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.footer-brand span {
+    color: #999;
+    font-size: 14px;
+}
+
+/* ✅ Links Section */
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.column h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.column a {
+    display: block;
+    text-decoration: underline;
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.column a:hover {
+    color: #5b3cc4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

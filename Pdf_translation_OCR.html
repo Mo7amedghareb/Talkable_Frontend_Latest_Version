@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles/Pdf_Translation_OCR.css">
+    <title> ترجمة pdf</title>
+</head>
+
+<body>
+    <div class="page">
+        <nav class="navbar">
+            <!-- ✅ Right: Logo -->
+            <div class="nav-logo">
+                <img src="assets/img/logo__5_-removebg-preview.png" class="logo">
+            </div>
+
+            <!-- ✅ Center: Links -->
+            <ul class="nav-links">
+                <li><i class="fa fa-home"></i><a style="text-decoration: none; color: #5b3cc4;"
+                        href="./home-page.html">الصفحة
+                        الرئيسية</a> </li>
+                <li><i class="fa fa-video"></i><a style="text-decoration: none; color: #5b3cc4;"
+                        href="./Meeting1_choose_user_type.html">اجتماع</a> </li>
+                <li><i class="fa fa-language"></i> <a style="text-decoration: none; color: #5b3cc4;"
+                        href="./Translation1_Choosetype_page.html">الترجمة</a></li>
+                <li><i class="fa fa-graduation-cap"></i> <a style="text-decoration: none; color: #5b3cc4;"
+                        href="./Courses_page.html">الكورسات</a></li>
+                <li class="active"><i class="fa fa-file-pdf"></i><a style="text-decoration: none; color: #5b3cc4;"
+                        href="Pdf_translation_OCR.html">ترجمة
+                        pdf</a> </li>
+            </ul>
+
+            <!-- ✅ Left: Avatar -->
+            <div class="nav-profile">
+                <a href="MyAccountPage.html"><img id="userAvatar" src="assets/img/profileimg.png" class="avatar"></a>
+            </div>
+
+        </nav>
+
+        <!-- Hero Title -->
+        <div class="hero-text">
+            <h1>ترجمة ملف Pdf</h1>
+            <p>تجربة السياق والفهم وتحويله إلى لغة الاختيار</p>
+        </div>
+        <main class="main-content">
+
+            <!-- Hero Section -->
+            <section class="hero-section">
+
+                <!-- Watercolor blobs -->
+                <div class="blob blob-1"></div>
+                <div class="blob blob-2"></div>
+                <div class="blob blob-3"></div>
+
+
+
+                <!-- Upload Card -->
+                <div class="upload-card">
+                    <div class="upload-area" id="dropZone">
+                        <div class="upload-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <p class="upload-title">اسحب الملف أو اختر ملفًا</p>
+                        <p class="upload-subtitle">صيغة PDF، الحجم الأقصى 10 ميغابايت</p>
+                        <input type="file" id="fileInput" accept=".pdf,image/*" hidden>
+                    </div>
+
+                    <!-- File Preview -->
+                    <div class="file-preview" id="filePreview">
+                        <i class="fas fa-file-pdf"></i>
+                        <span id="fileName">لم يتم اختيار ملف</span>
+                        <button class="remove-file" id="removeFile">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <button class="translate-btn" id="translateBtn">
+                        <i class="fas fa-file-pdf"></i>
+                        ابدأ ترجمة
+                    </button>
+                </div>
+
+            </section>
+
+            <!-- Output Section -->
+            <section class="output-section">
+                <div class="output-card">
+
+                    <div class="output-header">
+                        <div class="output-title">
+                            <i class="fas fa-file-alt"></i>
+                            النص المستخرج
+                        </div>
+                        <button class="share-btn" id="shareBtn" title="مشاركة">
+                            <i class="fas fa-share-alt"></i>
+                        </button>
+                    </div>
+
+                    <!-- Loading Spinner -->
+                    <div class="loading-spinner" id="loadingSpinner">
+                        <div class="spinner"></div>
+                        <p>جاري الترجمة...</p>
+                    </div>
+
+                    <div class="output-text" id="outputText">
+                        <p id="translatedContent">
+
+                    </div>
+
+                    <button class="export-btn" id="exportBtn">
+                        <i class="fas fa-file-export"></i>
+                        تصدير
+                    </button>
+
+                </div>
+            </section>
+
+
+        </main>
+
+        <!-- Toast Notification -->
+        <div class="toast" id="toast"></div>
+
+
+    </div>
+    <script src="assets/js/pdf-translation.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/Courses_page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>صفحة الكورسات</title>
+</head>
+
+<body>
+
+    <!-- ✅ Navbar -->
+    <nav class="navbar">
+        <!-- ✅ Right: Logo -->
+        <div class="nav-logo">
+            <img src="assets/img/logo__5_-removebg-preview.png" class="logo">
+        </div>
+
+        <!-- ✅ Center: Links -->
+        <ul class="nav-links">
+            <li><i class="fa fa-home"></i><a style="text-decoration: none; color: #5b3cc4;"
+                    href="./home-page.html">الصفحة
+                    الرئيسية</a> </li>
+            <li><i class="fa fa-video"></i><a style="text-decoration: none; color: #5b3cc4;"
+                    href="./Meeting1_choose_user_type.html">اجتماع</a> </li>
+            <li><i class="fa fa-language"></i> <a style="text-decoration: none; color: #5b3cc4;"
+                    href="./Translation1_Choosetype_page.html">الترجمة</a></li>
+            <li class="active"><i class="fa fa-graduation-cap"></i> <a style="text-decoration: none; color: #5b3cc4;"
+                    href="./Courses_page.html">الكورسات</a></li>
+            <li><i class="fa fa-file-pdf"></i><a style="text-decoration: none; color: #5b3cc4;"
+                    href="Pdf_translation_OCR.html">ترجمة
+                    pdf</a> </li>
+        </ul>
+
+        <!-- ✅ Left: Avatar -->
+        <div class="nav-profile">
+            <a href="MyAccountPage.html"><img id="userAvatar" src="assets/img/profileimg.png" class="avatar"></a>
+        </div>
+
+    </nav>
+
+
+
+    <div class="page">
+        <div class="main-new">
+
+            <div class="main-new-header">
+                <h3>الكورسات</h3>
+                <button>عودة ></button>
+            </div>
+
+            <!-- Hero Section -->
+            <div class="hero">
+                <!-- اليمين (النص) -->
+                <div class="hero-right">
+                    <h1>أكاديمية Talkable: تعلم لغة الإشارة بسهولة</h1>
+                    <p>
+                        منصة تعليمية شاملة تهدف إلى تمكين مجتمع الصم وضعاف السمع
+                        من خلال محتوى تفاعلي ودورات متخصصة بلغة الإشارة.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary">ابدأ رحلتك الآن</button>
+                        <button class="btn-outline">تصفح المسارات</button>
+                    </div>
+                </div>
+
+                <!-- اليسار (الدائرة) -->
+                <div class="hero-left">
+                    <div class="hero-circle">
+                        <i class="fa-solid fa-hands"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Courses Grid -->
+            <div class="courses-container">
+                <a href="#">
+                    <div class="item-courses">
+                        <p class="price">500 جنيه</p>
+                        <img src="assets/img/course1.png" alt="">
+                        <h4>التواصل في بيئة العمل</h4>
+                        <p class="course-desc">
+                            مهارات التواصل الفعال في المكاتب والاجتماعات، مع التركيز على التعاون بين الزملاء.
+                        </p>
+                        <div class="content">
+                            <span>12 فيديو</span>
+                            <span>6 ساعات</span>
+                        </div>
+                        <div class="course-footer">
+                            <a href="Course_Details.html" class="start-btn">
+                                ابدأ التعلم <i class="fa fa-arrow-left"></i>
+                            </a>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="item-courses">
+                        <p class="price">800 جنيه</p>
+                        <img src="assets/img/course2.png" alt="">
+                        <h4>لغة الإشارة القانونية</h4>
+                        <p class="course-desc">
+                            تعلم المصطلحات والتعابير القانونية المتقدمة لتمكين التواصل في الأطر القضائية والقانونية.
+                        </p>
+                        <div class="content">
+                            <span>12 فيديو</span>
+                            <span>6 ساعات</span>
+                        </div>
+                        <div class="course-footer">
+                            <a href="Course_Details.html" class="start-btn">
+                                ابدأ التعلم <i class="fa fa-arrow-left"></i>
+                            </a>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="item-courses">
+                        <p class="price">1500 جنيه</p>
+                        <img src="assets/img/course3.png" alt="">
+                        <h4>مستوى المبتدئين: الأساسيات</h4>
+                        <p class="course-desc">
+                            ابدأ رحلتك في لغة الإشارة من خلال تعلم الحروف والأرقام والتحيات اليومية البسيطة.
+                        </p>
+                        <div class="content">
+                            <span>12 فيديو</span>
+                            <span>6 ساعات</span>
+                        </div>
+                        <div class="course-footer">
+                            <a href="Course_Details.html" class="start-btn">
+                                ابدأ التعلم <i class="fa fa-arrow-left"></i>
+                            </a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <!-- ✅ Footer -->
+    <footer class="footer">
+
+        <!-- ✅ Right Side -->
+        <div class="footer-brand">
+            <h2>Talkable</h2>
+            <p>
+                نحن نؤمن بأن التواصل حق للجميع. منصة Talkable توفر الأدوات
+                اللازمة لكسر حواجز الصمت والوصول إلى مجتمع أكثر شمولية.
+            </p>
+            <span>© 2024 Talkable. Inclusive Clarity.</span>
+        </div>
+
+        <!-- ✅ Links -->
+        <div class="footer-links">
+
+            <div class="column">
+                <h4>المنصة</h4>
+                <a href="#">لوحة التحكم</a>
+                <a href="#">الخدمات</a>
+                <a href="#">الأكاديمية</a>
+            </div>
+
+            <div class="column">
+                <h4>الدعم</h4>
+                <a href="#">مركز المساعدة</a>
+                <a href="#">تواصل معنا</a>
+                <a href="#">بيان الوصول</a>
+            </div>
+
+            <div class="column">
+                <h4>قانوني</h4>
+                <a href="#">شروط الخدمة</a>
+                <a href="#">سياسة الخصوصية</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

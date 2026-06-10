@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/styles/MyAccountPage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title> صفحة حسابي</title>
+</head>
+
+<body>
+
+  <!-- ✅ Navbar -->
+  <nav class="navbar">
+    <!-- ✅ Right: Logo -->
+    <div class="nav-logo">
+      <img src="assets/img/logo__5_-removebg-preview.png" class="logo">
+    </div>
+
+    <!-- ✅ Center: Links -->
+    <ul class="nav-links">
+      <li><i class="fa fa-home"></i><a style="text-decoration: none; color: #5b3cc4;" href="./home-page.html">الصفحة
+          الرئيسية</a> </li>
+      <li><i class="fa fa-video"></i><a style="text-decoration: none; color: #5b3cc4;"
+          href="./Meeting1_choose_user_type.html">اجتماع</a> </li>
+      <li><i class="fa fa-language"></i> <a style="text-decoration: none; color: #5b3cc4;"
+          href="./Translation1_Choosetype_page.html">الترجمة</a></li>
+      <li><i class="fa fa-graduation-cap"></i> <a style="text-decoration: none; color: #5b3cc4;"
+          href="./Courses_page.html">الكورسات</a></li>
+      <li><i class="fa fa-file-pdf"></i><a style="text-decoration: none; color: #5b3cc4;" href="Pdf_translation_OCR.html">ترجمة
+          pdf</a> </li>
+    </ul>
+
+    <!-- ✅ Left: Avatar -->
+    <div class="nav-profile">
+      <a href="MyAccountPage.html"><img id="userAvatar" src="assets/img/profileimg.png" class="avatar"></a>
+    </div>
+
+  </nav>
+
+
+
+
+  <div class="page">
+
+    <div class="main-container">
+
+      <!-- Header -->
+      <div class="main-header">
+        <h1>حسابي:</h1>
+        <button class="back-btn">
+          <span>عودة</span>
+        </button>
+
+      </div>
+
+      <!-- Profile Section -->
+      <div class="profile-page">
+
+        <!-- Cover + Avatar -->
+        <header class="cover">
+          <div class="center">
+            <img style="margin-left: auto;margin-right: auto;" id="avatar" class="avatar"
+              src="assets/img/profileimg.png" alt="محمد احمد" />
+            <h1 id="fullNameTop">محمد عزيز</h1>
+            <p class="subtitle">نوع المستخدم: <span id="userTypeTop">صم وبكم</span>
+              <button class="edit-small">✏️</button>
+            </p>
+          </div>
+        </header>
+
+        <main class="content">
+
+          <!-- معلومات الملف الشخصي -->
+          <section class="card">
+            <div class="card-head">
+              <h2 style="margin-top: 16px;">معلومات الملف الشخصي:</h2>
+            </div>
+
+            <div class="info-row">
+              <div class="icon">✏️</div>
+              <div class="label">الاسم الكامل:</div>
+              <div class="value" id="fullName">أحمد محمد زكريا</div>
+            </div>
+
+            <div class="info-row">
+              <div class="icon">✏️</div>
+              <div class="label">البريد الإلكتروني:</div>
+              <div class="value" id="email">mohamed@gmail.com</div>
+            </div>
+
+            <div class="info-row">
+              <div class="icon">✏️</div>
+              <div class="label">نوع المستخدم:</div>
+              <div class="value" id="userType">صم وبكم</div>
+            </div>
+          </section>
+
+          <!-- الحماية -->
+          <section class="card">
+            <div class="card-head">
+              <h2>الحماية:</h2>
+            </div>
+
+            <div class="info-row">
+              <div class="icon">✏️</div>
+              <div class="label">كلمة المرور:</div>
+              <div class="value">********</div>
+            </div>
+          </section>
+
+        </main>
+      </div>
+    </div>
+
+  </div>
+  <!-- ✅ Footer -->
+  <footer class="footer">
+
+    <!-- ✅ Right Side -->
+    <div class="footer-brand">
+      <h2>Talkable</h2>
+      <p>
+        نحن نؤمن بأن التواصل حق للجميع. منصة Talkable توفر الأدوات
+        اللازمة لكسر حواجز الصمت والوصول إلى مجتمع أكثر شمولية.
+      </p>
+      <span>© 2024 Talkable. Inclusive Clarity.</span>
+    </div>
+
+    <!-- ✅ Links -->
+    <div class="footer-links">
+
+      <div class="column">
+        <h4>المنصة</h4>
+        <a href="#">لوحة التحكم</a>
+        <a href="#">الخدمات</a>
+        <a href="#">الأكاديمية</a>
+      </div>
+
+      <div class="column">
+        <h4>الدعم</h4>
+        <a href="#">مركز المساعدة</a>
+        <a href="#">تواصل معنا</a>
+        <a href="#">بيان الوصول</a>
+      </div>
+
+      <div class="column">
+        <h4>قانوني</h4>
+        <a href="#">شروط الخدمة</a>
+        <a href="#">سياسة الخصوصية</a>
+      </div>
+
+    </div>
+
+  </footer>
+  <script src="assets/js/page-account.js"></script>
+</body>
+
+</html>

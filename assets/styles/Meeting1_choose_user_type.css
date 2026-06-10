@@ -1,0 +1,268 @@
+.meeting-page {
+    padding: 80px;
+    background-image: url("../img/backgroung.jpeg");
+    background-size: cover;
+}
+
+/* ✅ Navbar */
+.navbar {
+    background: #ffffff;
+    padding: 15px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* اللوجو */
+.logo {
+    width: 240px;
+}
+
+/* اللينكات */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-links li {
+    cursor: pointer;
+    color: #5b3cc4;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* العنصر النشط */
+.nav-links .active {
+    background: #e6e0ff;
+    border-bottom: 3px solid #5b3cc4;
+}
+
+/* الصورة الشخصية */
+.avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 3px solid #5b3cc4;
+    object-fit: cover;
+}
+
+
+.title_back{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+/* ✅ Title */
+.page-title {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* ✅ Back Button */
+.back-btn {
+    background: #6c6c7c;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    font-size: medium;
+    text-align: center;
+}
+
+/* ✅ Settings Box */
+.settings-box {
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+    height: 200px;
+}
+
+.setting-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.setting-text {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.setting-text i {
+    font-size: 28px;
+}
+
+/* ✅ Switch */
+.switch {
+    position: relative;
+    width: 60px;
+    height: 25px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    background: #ccc;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: 4px;
+    bottom: 4px;
+    background: white;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.switch input:checked+.slider {
+    background: #22c55e;
+}
+
+.switch input:checked+.slider::before {
+    transform: translateX(-34px);
+}
+
+/* ✅ User Types */
+.user-title {
+    margin-bottom: 20px;
+}
+
+.user-types {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.user-card input {
+    display: none;
+}
+
+.card-box {
+    width: 250px;
+    height: 200px;
+    background: #ffffff;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: .3s;
+}
+
+.user-card input:checked+.card-box {
+    border: 3px solid #624ecc;
+    background: #e9e0ff;
+}
+
+/* ✅ Start Button */
+.start-btn {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(to left, #624ecc, #7c5cff);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 80px;
+    margin-top: 32px;
+}
+
+/* ✅ Character */
+.character {
+    text-align: left;
+}
+
+.character img {
+    width: 300px;
+    border: 8px solid #624ecc;
+    border-radius: 50%;
+}
+
+
+/* ✅ Footer */
+.footer {
+    background: #f4f4f6;
+    padding: 70px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* ✅ Right Brand Section */
+.footer-brand {
+    max-width: 400px;
+}
+
+.footer-brand h2 {
+    color: #5b3cc4;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.footer-brand p {
+    color: #777;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.footer-brand span {
+    color: #999;
+    font-size: 14px;
+}
+
+/* ✅ Links Section */
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.column h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.column a {
+    display: block;
+    text-decoration: underline;
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.column a:hover {
+    color: #5b3cc4;
+}

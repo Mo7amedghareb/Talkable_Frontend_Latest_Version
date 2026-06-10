@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/styles/Translate_from_speech_to_sign.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title> صفحة الترجمه من الكلام الى الاشاره </title>
+</head>
+
+<body>
+  <!-- ✅ Navbar -->
+  <nav class="navbar">
+    <!-- ✅ Right: Logo -->
+    <div class="nav-logo">
+      <img src="assets/img/logo__5_-removebg-preview.png" class="logo">
+    </div>
+
+    <!-- ✅ Center: Links -->
+    <ul class="nav-links">
+      <li><i class="fa fa-home"></i><a style="text-decoration: none; color: #5b3cc4;" href="./home-page.html">الصفحة
+          الرئيسية</a> </li>
+      <li><i class="fa fa-video"></i><a style="text-decoration: none; color: #5b3cc4;"
+          href="./Meeting1_choose_user_type.html">اجتماع</a> </li>
+      <li class="active"><i class="fa fa-language"></i> <a style="text-decoration: none; color: #5b3cc4;"
+          href="./Translation1_Choosetype_page.html">الترجمة</a></li>
+      <li><i class="fa fa-graduation-cap"></i> <a style="text-decoration: none; color: #5b3cc4;"
+          href="./Courses_page.html">الكورسات</a></li>
+      <li><i class="fa fa-file-pdf"></i><a style="text-decoration: none; color: #5b3cc4;" href="Pdf_translation_OCR.html">ترجمة
+          pdf</a> </li>
+    </ul>
+
+    <!-- ✅ Left: Avatar -->
+    <div class="nav-profile">
+      <a href="MyAccountPage.html"><img id="userAvatar" src="assets/img/profileimg.png" class="avatar"></a>
+    </div>
+
+  </nav>
+
+
+
+  <div class="page">
+    <div class="main-rtos">
+      <div class="main-rtos-translation-stog">
+        <textarea id="textInput" placeholder="اكتب النص هنا..."></textarea>
+      </div>
+
+      <div class="main-rtos-button">
+        <button id="translateBtn">ترجمة</button>
+      </div>
+
+      <div id="statusMessage"></div>
+
+      <!-- حاوية الأفاتار -->
+      <div id="avatar-wrapper">
+        <div id="avatar-ring">
+          <div id="avatar-container">
+            <!-- هنا three.js بيرسم الـcanvas -->
+          </div>
+
+          <!-- اللودينج -->
+          <div id="loader" class="loader hidden">
+            <div class="loader-circle"></div>
+            <div class="loader-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ✅ Footer -->
+    <footer class="footer">
+
+      <!-- ✅ Right Side -->
+      <div class="footer-brand">
+        <h2>Talkable</h2>
+        <p>
+          نحن نؤمن بأن التواصل حق للجميع. منصة Talkable توفر الأدوات
+          اللازمة لكسر حواجز الصمت والوصول إلى مجتمع أكثر شمولية.
+        </p>
+        <span>© 2024 Talkable. Inclusive Clarity.</span>
+      </div>
+
+      <!-- ✅ Links -->
+      <div class="footer-links">
+
+        <div class="column">
+          <h4>المنصة</h4>
+          <a href="#">لوحة التحكم</a>
+          <a href="#">الخدمات</a>
+          <a href="#">الأكاديمية</a>
+        </div>
+
+        <div class="column">
+          <h4>الدعم</h4>
+          <a href="#">مركز المساعدة</a>
+          <a href="#">تواصل معنا</a>
+          <a href="#">بيان الوصول</a>
+        </div>
+
+        <div class="column">
+          <h4>قانوني</h4>
+          <a href="#">شروط الخدمة</a>
+          <a href="#">سياسة الخصوصية</a>
+        </div>
+
+      </div>
+
+    </footer>
+    <!-- three.js -->
+    <script src="https://unpkg.com/three@0.146.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.146.0/examples/js/loaders/GLTFLoader.js"></script>
+
+    <script src="assets/js/speech-to-gesture.js"></script>
+</body>
+
+</html>

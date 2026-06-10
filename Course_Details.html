@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الكورس</title>
+
+    <link rel="stylesheet" href="./assets/styles/CourseDetails.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- ✅ Navbar -->
+    <nav class="navbar">
+        <!-- ✅ Right: Logo -->
+        <div class="nav-logo">
+            <img src="assets/img/logo__5_-removebg-preview.png" class="logo">
+        </div>
+
+        <!-- ✅ Center: Links -->
+        <ul class="nav-links">
+            <li><i class="fa fa-home"></i><a style="text-decoration: none; color: #5b3cc4;"
+                    href="./home-page.html">الصفحة
+                    الرئيسية</a> </li>
+            <li><i class="fa fa-video"></i><a style="text-decoration: none; color: #5b3cc4;"
+                    href="./Meeting1_choose_user_type.html">اجتماع</a> </li>
+            <li><i class="fa fa-language"></i> <a style="text-decoration: none; color: #5b3cc4;"
+                    href="./Translation1_Choosetype_page.html">الترجمة</a></li>
+            <li class="active"><i class="fa fa-graduation-cap"></i> <a style="text-decoration: none; color: #5b3cc4;"
+                    href="./Courses_page.html">الكورسات</a></li>
+            <li><i class="fa fa-file-pdf"></i><a style="text-decoration: none; color: #5b3cc4;"
+                    href="Pdf_translation_OCR.html">ترجمة
+                    pdf</a> </li>
+        </ul>
+
+        <!-- ✅ Left: Avatar -->
+        <div class="nav-profile">
+            <a href="MyAccountPage.html"><img id="userAvatar" src="assets/img/profileimg.png" class="avatar"></a>
+        </div>
+
+    </nav>
+
+    <div class="course-page">
+
+        <!-- 🟣 RIGHT -->
+        <div class="course-right">
+
+            <!-- Video -->
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+            </div>
+
+            <!-- Progress -->
+            <div class="card progress">
+                <div class="progress-top">
+                    <span>تقدمك في الدورة</span>
+                    <span class="percent">50%</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+
+                <p class="progress-text">
+                    لقد أكملت 6 دروس من أصل 12. استمر!
+                </p>
+            </div>
+
+            <!-- About -->
+            <div class="card about">
+                <h4>حول هذه الدورة</h4>
+
+                <p>
+                    تغطي هذه الدورة الشاملة أساسيات لغة الإشارة المستخدمة في التعاملات اليومية. نهدف من خلال "Talkable"
+                    إلى تمكين التواصل السلس والواضح بين الجميع.
+                </p>
+
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="check-circle">✔</div>
+                        <span>التحيات والتعريف بالنفس</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-circle">✔</div>
+                        <span>التعبير عن الاحتياجات الأساسية</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-circle">✔</div>
+                        <span>الأرقام والوقت في لغة الإشارة</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-circle">✔</div>
+                        <span>التواصل في الأماكن العامة</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 🔵 LEFT -->
+        <div class="course-left">
+
+            <!-- Instructor -->
+            <div class="card instructor">
+                <img style="margin-left: auto;margin-right: auto;margin-bottom: 8px;" src="assets/img/evaluates-img.png"
+                    class="avatar">
+
+                <h4 style="margin-bottom: 8px;">أ. سامي المنصور</h4>
+                <p class="sub">خبير لغة الإشارة المعتمد</p>
+
+                <button class="btn-main">تواصل مع المدرب</button>
+            </div>
+
+            <!-- Reviews -->
+            <div class="card reviews">
+                <div class="reviews-header">
+                    <h4>آراء المتدربين</h4>
+                    <span class="add-review">أضف تقييم +</span>
+                </div>
+
+                <div class="review-item">
+                    <div class="review-top">
+                        <span>مؤمن رجب</span>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <p style="margin-bottom: 8px;color: rgba(0, 0, 0, 0.612);">دورة ممتازة جداً، الشرح واضح ومبسط.
+                        ساعدتني كثيراً في التواصل مع زملائي في العمل.</p>
+                    <hr>
+                </div>
+
+                <div class="review-item">
+                    <div class="review-top">
+                        <span>سارة أحمد</span>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <p style="margin-bottom: 8px; color: rgba(0, 0, 0, 0.612);">جودة الفيديو رائعة والترجمة المصاحبة
+                        دقيقة جداً. أنصح بها المبتدئين.</p>
+                    <hr>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- ✅ Footer -->
+    <footer class="footer">
+
+        <!-- ✅ Right Side -->
+        <div class="footer-brand">
+            <h2>Talkable</h2>
+            <p>
+                نحن نؤمن بأن التواصل حق للجميع. منصة Talkable توفر الأدوات
+                اللازمة لكسر حواجز الصمت والوصول إلى مجتمع أكثر شمولية.
+            </p>
+            <span>© 2024 Talkable. Inclusive Clarity.</span>
+        </div>
+
+        <!-- ✅ Links -->
+        <div class="footer-links">
+
+            <div class="column">
+                <h4>المنصة</h4>
+                <a href="#">لوحة التحكم</a>
+                <a href="#">الخدمات</a>
+                <a href="#">الأكاديمية</a>
+            </div>
+
+            <div class="column">
+                <h4>الدعم</h4>
+                <a href="#">مركز المساعدة</a>
+                <a href="#">تواصل معنا</a>
+                <a href="#">بيان الوصول</a>
+            </div>
+
+            <div class="column">
+                <h4>قانوني</h4>
+                <a href="#">شروط الخدمة</a>
+                <a href="#">سياسة الخصوصية</a>
+            </div>
+
+        </div>
+
+    </footer>
+</body>
+
+</html>

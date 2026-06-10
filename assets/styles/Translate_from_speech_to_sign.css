@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: #f3f0fb;
+}
+
+/* ✅ Navbar */
+.navbar {
+    background: #ffffff;
+    padding: 15px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 100px;
+}
+
+/* اللوجو */
+.logo {
+    width: 240px;
+}
+
+/* اللينكات */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-links li {
+    cursor: pointer;
+    color: #5b3cc4;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* العنصر النشط */
+.nav-links .active {
+    background: #e6e0ff;
+    border-bottom: 3px solid #5b3cc4;
+}
+
+/* الصورة الشخصية */
+.avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 3px solid #5b3cc4;
+    object-fit: cover;
+}
+
+
+
+.main-rtos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* يخلي كل حاجة في النص أفقي */
+    justify-content: center;
+}
+
+
+
+.main-rtos-button button {
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    height: 40px;
+    background-color: #5b3cc4;
+    border: none;
+    align-items: center;
+    border-radius: 8px;
+    color: white;
+    margin-bottom: 20px;
+    outline: none;
+
+}
+
+
+.main-rtos-translation-stog textarea {
+    width: 400px;
+    height: 80px;
+    background-color: #D9D9D9;
+    border-radius: 8px;
+    resize: none;
+    border: none;
+    outline: none;
+    padding-right: 12px;
+    padding-top: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
+}
+
+
+.main-rtos-translation-stog img {
+    width: 32px;
+    height: 32px;
+    top: 150px;
+    left: 50px;
+    padding: 5px;
+}
+
+
+
+#avatar-wrapper {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+/* دايرة الأفاتار الخارجية */
+#avatar-ring {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 3px solid #7a4bff;
+    /* بنفسجي تقريبا زي الديزاين */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 30% 30%, #ffffff, #f5f0ff);
+    box-shadow: 0 10px 25px rgba(122, 75, 255, 0.25);
+    overflow: hidden;
+}
+
+
+#avatar-container {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* نخلي الـrenderer يملى المساحة */
+#avatar-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+
+/* اللودينج */
+.loader {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+}
+
+/* نستخدم كلاس hidden اللي انت عاملها */
+.hidden {
+    display: none !important;
+}
+
+/* الحلقة الدوّارة */
+.loader-circle {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 4px solid rgba(122, 75, 255, 0.18);
+    border-top-color: #7a4bff;
+    animation: spin 1s linear infinite;
+    box-sizing: border-box;
+}
+
+/* نقطة صغيرة تنبض */
+.loader-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #7a4bff;
+    animation: pulse 0.9s ease-in-out infinite;
+}
+
+/* أنيميشن السبِن */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* أنيميشن النبض */
+@keyframes pulse {
+    0% {
+        transform: scale(0.7);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.7);
+        opacity: 0.6;
+    }
+}
+
+/* رسالة الحالة */
+#statusMessage {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+
+
+
+/* ✅ Footer */
+.footer {
+    background: #f4f4f6;
+    padding: 70px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 64px;
+}
+
+/* ✅ Right Brand Section */
+.footer-brand {
+    max-width: 400px;
+}
+
+.footer-brand h2 {
+    color: #5b3cc4;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.footer-brand p {
+    color: #777;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.footer-brand span {
+    color: #999;
+    font-size: 14px;
+}
+
+/* ✅ Links Section */
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.column h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.column a {
+    display: block;
+    text-decoration: underline;
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.column a:hover {
+    color: #5b3cc4;
+}

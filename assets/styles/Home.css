@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: #f3f0fb;
+}
+
+/* ✅ Navbar */
+.navbar {
+    background: #ffffff;
+    padding: 15px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* اللوجو */
+.logo {
+    width: 240px;
+}
+
+/* اللينكات */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-links li {
+    cursor: pointer;
+    color: #5b3cc4;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* العنصر النشط */
+.nav-links .active {
+    background: #e6e0ff;
+    border-bottom: 3px solid #5b3cc4;
+}
+
+/* الصورة الشخصية */
+.avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 3px solid #5b3cc4;
+    object-fit: cover;
+}
+
+/* ✅ Hero */
+.hero {
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 32px;
+    background: linear-gradient(rgba(98, 78, 204, .9), rgba(98, 78, 204, .5)),
+        url("../img/Hero\ background.png");
+    background-size: cover;
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: -16px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero span {
+    font-weight: bold;
+}
+
+.hero p {
+    margin-bottom: 16px;
+    line-height: 1.8;
+}
+
+.hero-buttons button {
+    padding: 12px 25px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.btn-primary {
+    background: white;
+    color: #5b3cc4;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+/* ✅ Services */
+/* ✅ Services Layout */
+.services {
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr;
+    grid-template-rows: auto auto;
+    gap: 25px;
+}
+
+/* الكروت */
+.card {
+    background: #f8f8f8;
+    padding: 30px;
+    border-radius: 20px;
+    position: relative;
+}
+
+/* الأكاديمية */
+.academy {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.translate {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* الفيديو (طويل) */
+.video {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    background: #f3f3f3;
+}
+
+.video h2 {
+    font-size: 28px;
+    margin: 20px 0;
+}
+
+.video a {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    /* بدل left */
+    color: #5b3cc4;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* PDF (عريض تحت أول اتنين) */
+.pdf {
+    grid-column: 2/4;
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* أيقونات مربعة زي التصميم */
+.icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    background: #e9e9e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5b3cc4;
+    font-size: 24px;
+}
+
+.icon-box.blue {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.icon-box.purple {
+    background: #e9e0ff;
+    color: #5b3cc4;
+}
+
+.icon-box.red {
+    background: #ffe2e2;
+    color: red;
+}
+
+/* العناوين */
+.card h3 {
+    margin: 20px 0 10px;
+    font-size: 22px;
+}
+
+.card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* سهم PDF */
+.arrow {
+    font-size: 22px;
+    color: #bbb;
+}
+
+/* ✅ Footer */
+.footer {
+    background: #f4f4f6;
+    padding: 70px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* ✅ Right Brand Section */
+.footer-brand {
+    max-width: 400px;
+}
+
+.footer-brand h2 {
+    color: #5b3cc4;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.footer-brand p {
+    color: #777;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.footer-brand span {
+    color: #999;
+    font-size: 14px;
+}
+
+/* ✅ Links Section */
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.column h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.column a {
+    display: block;
+    text-decoration: underline;
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.column a:hover {
+    color: #5b3cc4;
+}

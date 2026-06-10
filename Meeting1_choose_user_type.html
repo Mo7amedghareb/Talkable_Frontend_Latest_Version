@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/choose_user_type.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>user-type</title>
+</head>
+
+<body >
+    <nav class="navbar">
+        <!-- ✅ Right: Logo -->
+        <div class="nav-logo">
+            <img src="assets/img/logo__5_-removebg-preview.png" class="logo">
+        </div>
+
+        <!-- ✅ Center: Links -->
+        <ul class="nav-links">
+            <li><i class="fa fa-home"></i><a style="text-decoration: none; color: #5b3cc4;"
+                    href="./home-page.html">الصفحة
+                    الرئيسية</a> </li>
+            <li ><i class="fa fa-video"></i><a style="text-decoration: none; color: #5b3cc4;"
+                    href="./Meeting1_choose_user_type.html">اجتماع</a> </li>
+            <li ><i class="fa fa-language"></i> <a style="text-decoration: none; color: #5b3cc4;"
+                    href="./Translation1_Choosetype_page.html">الترجمة</a></li>
+            <li><i class="fa fa-graduation-cap"></i> <a style="text-decoration: none; color: #5b3cc4;"
+                    href="./Courses_page.html">الكورسات</a></li>
+            <li><i class="fa fa-file-pdf"></i><a style="text-decoration: none; color: #5b3cc4;"
+                    href="Pdf_translation_OCR.html">ترجمة
+                    pdf</a> </li>
+        </ul>
+
+        <!-- ✅ Left: Avatar -->
+        <div class="nav-profile">
+            <a href="MyAccountPage.html"><img id="userAvatar" src="assets/img/profileimg.png" class="avatar"></a>
+        </div>
+
+    </nav>
+    <div class="page">
+
+
+        <div class="main-new">
+            <div class="main-new-header">
+                <div class="back-btn">
+                    <button id="button1">عودة ></button>
+                </div>
+                <h3> اعدادات المقابلة</h3>
+
+            </div>
+            <div class="main-settings">
+                <div class="open-camira">
+
+
+
+                    <img src="assets/img/vector-camira-black.png" alt="">
+
+                    <span>تفعيل الاهتزاز</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+
+
+                </div>
+                <div class="open-micrphone">
+
+
+
+
+                    <img src="assets/img/Vector-microphon-black.png" alt="">
+
+                    <span>تفعيل الاهتزاز</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+
+
+                </div>
+            </div>
+            <div class="main-user-type-titel">
+                <span> نوع المستخدم:
+
+                </span>
+            </div>
+            <div class="main-user-type">
+
+                <div class="main-user-type-radio">
+                    <div class="normal">
+                        <input type="radio" id="normal" name="user" value="normal">
+                        <label for="normal" class="main-user-type-radio-circle">
+
+
+
+                            <img src="assets/img/img-in-radio.png" alt="">
+
+                            <span>شخص طبيعي</span>
+                        </label>
+                    </div>
+
+                    <div class="som">
+                        <input type="radio" id="deaf" name="user" value="deaf">
+                        <label for="deaf" class="main-user-type-radio-circle">
+
+
+
+                            <img src="assets/img/img-in-radio2.png" alt="">
+
+                            <span>صم وبكم</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- ... نفس صفحتك لحد main-user-type ... -->
+
+            <!-- ===== غرفة المكالمة ===== -->
+            <div class="room-box">
+                <label for="roomInput">كود الغرفة:</label>
+                <input id="roomInput" type="text" placeholder="اضغط إنشاء غرفة أو اكتب كود للانضمام">
+                <button id="copyRoomBtn" type="button">نسخ</button>
+            </div>
+
+            <div class="room-actions">
+                <button id="createRoomBtn" type="button">إنشاء غرفة</button>
+                <button id="joinRoomBtn" type="button">انضمام</button>
+            </div>
+
+            <p id="roomStatus" class="room-status"></p>
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"></script>
+    <script src="assets/js/user-type.js" defer></script>
+</body>
+
+</html>

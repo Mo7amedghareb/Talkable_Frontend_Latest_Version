@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: #f3f0fb;
+}
+
+/* ✅ Navbar */
+.navbar {
+    background: #ffffff;
+    padding: 15px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* اللوجو */
+.logo {
+    width: 240px;
+}
+
+/* اللينكات */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-links li {
+    cursor: pointer;
+    color: #5b3cc4;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* العنصر النشط */
+.nav-links .active {
+    background: #e6e0ff;
+    border-bottom: 3px solid #5b3cc4;
+}
+
+/* الصورة الشخصية */
+.avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 3px solid #5b3cc4;
+    object-fit: cover;
+}
+
+/* صفحة الترجمة من الاشاره الى الكلام */
+.main-rtos {
+    width: 100%;
+    min-height:100%;
+    direction: rtl;
+    margin-right: 0px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.main-rtos-video video {
+    width: 650px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    background: #00000010;
+}
+
+.main-rtos-translation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.main-rtos-translation-show-tran {
+    width: 305px;
+    height: 121px;
+    background-color: #624ECC;
+    border-radius: 8px;
+    position: relative;
+}
+
+.main-rtos-translation-show-tran p {
+    padding-top: 5px;
+    direction: rtl;
+    padding-right: 5px;
+    color: white;
+    font-size: small;
+}
+
+.speak-btn {
+    background: transparent;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+.main-rtos-translation-avtar img {
+    width: 175px;
+    height: 175px;
+}
+
+
+
+
+/* ✅ Footer */
+.footer {
+    background: #f4f4f6;
+    padding: 70px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* ✅ Right Brand Section */
+.footer-brand {
+    max-width: 400px;
+}
+
+.footer-brand h2 {
+    color: #5b3cc4;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.footer-brand p {
+    color: #777;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.footer-brand span {
+    color: #999;
+    font-size: 14px;
+}
+
+/* ✅ Links Section */
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.column h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.column a {
+    display: block;
+    text-decoration: underline;
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.column a:hover {
+    color: #5b3cc4;
+}
+
+
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    height: 380px;
+    margin: 0 auto;
+}
+
+/* 🟢 تم التعديل هنا: قلب الفيديو والرسم بصرياً (تأثير المرآة) لراحتك */
+#camVideo,
+#outputCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transform: scaleX(-1);
+}
+
+#outputCanvas {
+    z-index: 2;
+    pointer-events: none;
+}
+
+
+
+.btns {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+/* زرار الاستماع */
+.speak-btn {
+    background: #ffffff;
+    color: #624ECC;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+    left: 60px;
+    bottom: 0px;
+}
+
+.speak-btn:hover {
+    background: #eee;
+}
+
+/* زرار المسح */
+.reset-btn {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.reset-btn:hover {
+    background: #e60000;
+}
