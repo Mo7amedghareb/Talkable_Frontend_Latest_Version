@@ -6,49 +6,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/styles/Deaf_and_Mute_Meeting_Page.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <title> صفحة اجتماع صم وبكم</title>
+  <title>صفحة اجتماع صم وبكم</title>
+  <style>
+    /* ===== Translation Panel — يعرض كلام الطرف العادي للشخص الصم ===== */
+    .translation-panel {
+      position: fixed;
+      bottom: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      pointer-events: none;
+    }
+
+    /* الكلمة المترجمة من حركات الشخص الصم نفسه (feedback) */
+    #myTranslationBox {
+      background: rgba(91, 60, 196, 0.92);
+      color: #fff;
+      padding: 10px 26px;
+      border-radius: 20px;
+      font-size: 1rem;
+      font-family: Arial, sans-serif;
+      direction: rtl;
+      text-align: center;
+      max-width: 80vw;
+      box-shadow: 0 4px 16px rgba(91, 60, 196, 0.45);
+      display: none;
+      animation: fadeIn .2s ease;
+    }
+
+    /* كلام الشخص العادي الواصل للشخص الصم */
+    #captionBox {
+      background: rgba(0, 0, 0, 0.84);
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 22px;
+      font-size: 1.35rem;
+      font-weight: 600;
+      font-family: Arial, sans-serif;
+      direction: rtl;
+      text-align: center;
+      max-width: 80vw;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      display: none;
+      animation: fadeIn .2s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <!-- ✅ Navbar -->
-    <nav class="navbar">
-      <!-- ✅ Right: Logo -->
-      <div class="nav-logo">
-        <img src="assets/img/logo__5_-removebg-preview.png" class="logo">
-      </div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <img src="assets/img/logo__5_-removebg-preview.png" class="logo">
+    </div>
+    <ul class="nav-links">
+      <li><i class="fa fa-home"></i><a style="text-decoration:none;color:#5b3cc4" href="./home-page.html">الصفحة
+          الرئيسية</a></li>
+      <li><i class="fa fa-video"></i><a style="text-decoration:none;color:#5b3cc4"
+          href="./Meeting1_choose_user_type.html">اجتماع</a></li>
+      <li><i class="fa fa-language"></i><a style="text-decoration:none;color:#5b3cc4"
+          href="./Translation1_Choosetype_page.html">الترجمة</a></li>
+      <li><i class="fa fa-graduation-cap"></i><a style="text-decoration:none;color:#5b3cc4"
+          href="./Courses_page.html">الكورسات</a></li>
+      <li><i class="fa fa-file-pdf"></i><a style="text-decoration:none;color:#5b3cc4"
+          href="Pdf_translation_OCR.html">ترجمة pdf</a></li>
+    </ul>
+    <div class="nav-profile">
+      <a href="MyAccountPage.html"><img id="userAvatar" src="assets/img/profileimg.png" class="avatar"></a>
+    </div>
+  </nav>
 
-      <!-- ✅ Center: Links -->
-      <ul class="nav-links">
-        <li><i class="fa fa-home"></i><a style="text-decoration: none; color: #5b3cc4;" href="./home-page.html">الصفحة
-            الرئيسية</a> </li>
-        <li><i class="fa fa-video"></i><a style="text-decoration: none; color: #5b3cc4;"
-            href="./Meeting1_choose_user_type.html">اجتماع</a> </li>
-        <li><i class="fa fa-language"></i> <a style="text-decoration: none; color: #5b3cc4;"
-            href="./Translation1_Choosetype_page.html">الترجمة</a></li>
-        <li><i class="fa fa-graduation-cap"></i> <a style="text-decoration: none; color: #5b3cc4;"
-            href="./Courses_page.html">الكورسات</a></li>
-        <li><i class="fa fa-file-pdf"></i><a style="text-decoration: none; color: #5b3cc4;"
-            href="Pdf_translation_OCR.html">ترجمة
-            pdf</a> </li>
-      </ul>
-
-      <!-- ✅ Left: Avatar -->
-      <div class="nav-profile">
-        <a href="MyAccountPage.html"><img id="userAvatar" src="assets/img/profileimg.png" class="avatar"></a>
-      </div>
-
-    </nav>
   <div class="page">
-    
-
-
-
     <div class="main-new">
+
+      <!-- Header -->
       <div class="main-new-header">
         <div class="back-btn">
           <button id="button1">عودة ></button>
         </div>
-
         <div class="title">
           <h3>Talkable</h3>
         </div>
@@ -58,70 +109,55 @@
           <button class="room-btn" id="copyRoomBtn" type="button">نسخ</button>
           <button class="room-btn" id="copyRoomLinkBtn" type="button">نسخ الرابط</button>
         </div>
-
         <div class="toast" id="toast" hidden></div>
-
         <div class="right-tools">
           <button id="endBtnTop" class="ending-but"><span>انهاء</span></button>
-
-          <!-- <a href="#" class="meeting-icon">
-      <img src="assets/img/q-m.png" alt="">
-      <img src="assets/img/hand.png" alt="">
-    </a> -->
         </div>
       </div>
 
-
-
-      <!-- Upload Section -->
+      <!-- Videos -->
       <section class="upload-section">
         <div class="card video-card" id="remoteCard">
           <video id="localVideo" autoplay playsinline muted></video>
-
         </div>
-
         <div class="card video-card" id="localCard">
           <video id="remoteVideo" autoplay playsinline></video>
-
         </div>
       </section>
 
-      <!-- Avatar -->
-      <!-- <section class="avatar-container">
-    <div class="avatar-circle">
-        <img src="assets/img/avtar.png" alt="avatar">
-    </div>
-</section> -->
-
-      <!-- Bottom Navigation -->
+      <!-- Bottom Nav -->
       <nav class="bottom-nav">
         <button id="btnChat" class="nav-btn" type="button" aria-label="Chat">💬</button>
         <button id="btnCaptions" class="nav-btn" type="button" aria-label="CC">🔤</button>
         <button id="btnSwitch" class="nav-btn" type="button" aria-label="Switch">🔄</button>
-
         <button id="btnEndBottom" class="nav-btn danger" type="button" aria-label="End">⛔</button>
-
         <button id="btnCam" class="nav-btn" type="button" aria-label="Camera">📷</button>
         <button id="btnMic" class="nav-btn" type="button" aria-label="Mic">🎤</button>
       </nav>
 
-
     </div>
-
-
-
-
-
-
-
-
-
   </div>
 
+  <div id="avatar-wrapper">
+    <div id="avatar-ring">
+      <div id="avatar-container"></div>
+    </div>
   </div>
+  <!-- ===== Translation Overlay — فوق الـ bottom nav ===== -->
+  <div class="translation-panel">
+    <!-- feedback: الكلمة اللي الشخص الصم بعتها من حركاته -->
+    <div id="myTranslationBox">🤟 ...</div>
+    <!-- كلام الشخص العادي الواصل للشخص الصم -->
+    <div id="captionBox">...</div>
+  </div>
+
   <script src="assets/js/meeting-1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"></script>
-  <script src="assets/js/call-signalr.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic/holistic.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/three@0.146.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.146.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="assets/js/deaf-call.js" defer></script>
 </body>
 
 </html>

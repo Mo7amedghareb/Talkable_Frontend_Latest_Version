@@ -125,21 +125,30 @@ document.addEventListener("DOMContentLoaded", async () => {
     let features = [];
 
     if (results.rightHandLandmarks) {
-      results.rightHandLandmarks.forEach(lm =>
-        features.push(lm.x, lm.y, lm.z)
-      );
+      const h = results.rightHandLandmarks;
+      const cx = h[0].x, cy = h[0].y;
+      const scale = Math.sqrt((h[9].x - cx) ** 2 + (h[9].y - cy) ** 2) || 1;
+      h.forEach(lm => {
+        features.push((lm.x - cx) / scale, (lm.y - cy) / scale, lm.z / scale);
+      });
     } else features.push(...Array(63).fill(0));
 
     if (results.leftHandLandmarks) {
-      results.leftHandLandmarks.forEach(lm =>
-        features.push(lm.x, lm.y, lm.z)
-      );
+      const h = results.leftHandLandmarks;
+      const cx = h[0].x, cy = h[0].y;
+      const scale = Math.sqrt((h[9].x - cx) ** 2 + (h[9].y - cy) ** 2) || 1;
+      h.forEach(lm => {
+        features.push((lm.x - cx) / scale, (lm.y - cy) / scale, lm.z / scale);
+      });
     } else features.push(...Array(63).fill(0));
 
     if (results.poseLandmarks) {
+      const p = results.poseLandmarks;
+      const cx = (p[11].x + p[12].x) / 2;
+      const cy = (p[11].y + p[12].y) / 2;
+      const scale = Math.sqrt((p[11].x - p[12].x) ** 2 + (p[11].y - p[12].y) ** 2) || 1;
       for (let i = 0; i < 33; i++) {
-        const lm = results.poseLandmarks[i];
-        features.push(lm.x, lm.y, lm.z);
+        features.push((p[i].x - cx) / scale, (p[i].y - cy) / scale, p[i].z / scale);
       }
     } else features.push(...Array(99).fill(0));
 
@@ -159,6 +168,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       const data = await res.json();
 
+
+      console.log(`Prediction: ${data.text} | Confidence: ${data.confidence}`);
       if (data.confidence < 0.7) return;
 
       predictionBuffer.push(data.text);

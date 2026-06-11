@@ -2,106 +2,231 @@
 <html lang="ar" dir="ltr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/styles/Normal_people_Meeting.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <title> صفحة اجتماع الشخص الطبيعي </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/styles/Normal_people_Meeting.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>صفحة اجتماع الشخص الطبيعي</title>
+  <style>
+    .meeting-translate-section {
+      display: flex;
+      gap: 20px;
+      padding: 12px 20px;
+      background: #f5f3ff;
+      border-top: 1px solid #e0d9ff;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .speech-side {
+      flex: 1;
+      min-width: 200px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .speech-side label {
+      font-size: 0.78rem;
+      color: #5b3cc4;
+      font-family: Arial, sans-serif;
+      direction: rtl;
+      font-weight: 600;
+    }
+
+    #speechDisplay {
+      width: 100%;
+      min-height: 90px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1.5px solid #c7baff;
+      background: #fff;
+      font-size: 1rem;
+      font-family: Arial, sans-serif;
+      direction: rtl;
+      color: #222;
+      resize: none;
+      box-shadow: 0 2px 8px rgba(91,60,196,0.08);
+      box-sizing: border-box;
+    }
+
+    .mic-indicator {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      color: #888;
+      font-family: Arial;
+      direction: rtl;
+    }
+
+    .mic-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #ccc;
+      transition: background .3s;
+      flex-shrink: 0;
+    }
+
+    .mic-dot.active {
+      background: #e53935;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+
+    .avatar-side {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .avatar-side label {
+      font-size: 0.78rem;
+      color: #5b3cc4;
+      font-family: Arial, sans-serif;
+      direction: rtl;
+      font-weight: 600;
+    }
+
+    #avatar-ring-call {
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      border: 3px solid #5b3cc4;
+      overflow: hidden;
+      background: #12102a;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #avatar-container-call { width: 100%; height: 100%; }
+    #avatar-container-call canvas { width: 100% !important; height: 100% !important; display: block; }
+
+    #avatar-loader-call {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(18,16,42,0.7);
+      border-radius: 50%;
+    }
+    #avatar-loader-call.hidden { display: none; }
+
+    .loader-circle-call {
+      width: 34px; height: 34px;
+      border: 3px solid rgba(91,60,196,0.3);
+      border-top-color: #5b3cc4;
+      border-radius: 50%;
+      animation: spin .8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    #avatarWordDisplay {
+      font-size: 1rem; font-family: Arial;
+      color: #5b3cc4; font-weight: 700;
+      direction: rtl; min-height: 22px; text-align: center;
+    }
+
+    #captionBox {
+      position: fixed;
+      bottom: 90px; left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.84);
+      color: #fff;
+      padding: 10px 26px;
+      border-radius: 20px;
+      font-size: 1.2rem; font-weight: 600;
+      font-family: Arial; direction: rtl;
+      text-align: center; max-width: 55vw;
+      z-index: 9999; display: none;
+      pointer-events: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+  </style>
 </head>
 
 <body>
-    <!-- ✅ Navbar -->
-    <nav class="navbar">
-        <!-- ✅ Right: Logo -->
-        <div class="nav-logo">
-            <img src="assets/img/logo__5_-removebg-preview.png" class="logo">
+  <nav class="navbar">
+    <div class="nav-logo">
+      <img src="assets/img/logo__5_-removebg-preview.png" class="logo">
+    </div>
+    <ul class="nav-links">
+      <li><i class="fa fa-home"></i><a style="text-decoration:none;color:#5b3cc4" href="./home-page.html">الصفحة الرئيسية</a></li>
+      <li><i class="fa fa-video"></i><a style="text-decoration:none;color:#5b3cc4" href="./Meeting1_choose_user_type.html">اجتماع</a></li>
+      <li><i class="fa fa-language"></i><a style="text-decoration:none;color:#5b3cc4" href="./Translation1_Choosetype_page.html">الترجمة</a></li>
+      <li><i class="fa fa-graduation-cap"></i><a style="text-decoration:none;color:#5b3cc4" href="./Courses_page.html">الكورسات</a></li>
+      <li><i class="fa fa-file-pdf"></i><a style="text-decoration:none;color:#5b3cc4" href="Pdf_translation_OCR.html">ترجمة pdf</a></li>
+    </ul>
+    <div class="nav-profile">
+      <a href="MyAccountPage.html"><img id="userAvatar" src="assets/img/profileimg.png" class="avatar"></a>
+    </div>
+  </nav>
+
+  <div class="page">
+    <div class="main-new">
+
+      <div class="main-new-header">
+        <div class="section back-btn">
+          <button id="button1"><span>عودة ></span></button>
+        </div>
+        <div class="section title"><h3>Talkable</h3></div>
+        <div class="room-pill" id="roomPill" hidden>
+          <span class="room-label">كود الغرفة:</span>
+          <span class="room-code" id="roomCode">---</span>
+          <button class="room-btn" id="copyRoomBtn" type="button">نسخ</button>
+          <button class="room-btn" id="copyRoomLinkBtn" type="button">نسخ الرابط</button>
+        </div>
+        <div class="toast" id="toast" hidden></div>
+        <div class="section-end-btn">
+          <button id="endBtnTop" class="ending-but"><span>انهاء</span></button>
+        </div>
+      </div>
+
+      <section class="upload-section">
+        <div class="card video-card" id="remoteCard">
+          <video id="localVideo" autoplay playsinline muted></video>
+        </div>
+        <div class="card video-card" id="localCard">
+          <video id="remoteVideo" autoplay playsinline></video>
+        </div>
+      </section>
+
+      <!-- ===== Translation Section ===== -->
+      <div class="meeting-translate-section">
+
+        <!-- كلام الشخص العادي -->
+        <div class="speech-side">
+          <label>🎤 كلامك (بيتبعت للشخص الصم)</label>
+          <textarea id="speechDisplay" readonly placeholder="ابدأ الكلام وهيظهر هنا..."></textarea>
+          <div class="mic-indicator">
+            <div class="mic-dot" id="micDot"></div>
+            <span id="micStatus">في انتظار الكلام...</span>
+          </div>
         </div>
 
-        <!-- ✅ Center: Links -->
-        <ul class="nav-links">
-            <li><i class="fa fa-home"></i><a style="text-decoration: none; color: #5b3cc4;"
-                    href="./home-page.html">الصفحة
-                    الرئيسية</a> </li>
-            <li><i class="fa fa-video"></i><a style="text-decoration: none; color: #5b3cc4;"
-                    href="./Meeting1_choose_user_type.html">اجتماع</a> </li>
-            <li><i class="fa fa-language"></i> <a style="text-decoration: none; color: #5b3cc4;"
-                    href="./Translation1_Choosetype_page.html">الترجمة</a></li>
-            <li><i class="fa fa-graduation-cap"></i> <a style="text-decoration: none; color: #5b3cc4;"
-                    href="./Courses_page.html">الكورسات</a></li>
-            <li><i class="fa fa-file-pdf"></i><a style="text-decoration: none; color: #5b3cc4;"
-                    href="Pdf_translation_OCR.html">ترجمة
-                    pdf</a> </li>
-        </ul>
+        
 
-        <!-- ✅ Left: Avatar -->
-        <div class="nav-profile">
-            <a href="MyAccountPage.html"><img  id="userAvatar" src="assets/img/profileimg.png" class="avatar"></a>
-        </div>
+      </div>
 
-    </nav>
-    <div class="page">
-        <div class="main-new">
-            <div class="main-new-header">
-                <div class="section back-btn">
-                    <button id="button1"><span>عودة ></span></button>
-                </div>
+      <nav class="bottom-nav">
+        <button id="btnChat"      class="nav-btn" type="button">💬</button>
+        <button id="btnCaptions"  class="nav-btn" type="button">🔤</button>
+        <button id="btnSwitch"    class="nav-btn" type="button">🔄</button>
+        <button id="btnEndBottom" class="nav-btn danger" type="button">⛔</button>
+        <button id="btnCam"       class="nav-btn" type="button">📷</button>
+        <button id="btnMic"       class="nav-btn" type="button">🎤</button>
+      </nav>
 
-                <div class="section title">
-                    <h3>Talkable</h3>
-                </div>
-                <div class="room-pill" id="roomPill" hidden>
-                    <span class="room-label">كود الغرفة:</span>
-                    <span class="room-code" id="roomCode">---</span>
-                    <button class="room-btn" id="copyRoomBtn" type="button">نسخ</button>
-                    <button class="room-btn" id="copyRoomLinkBtn" type="button">نسخ الرابط</button>
-                </div>
+    </div>
+  </div>
 
-                <div class="toast" id="toast" hidden></div>
+  <div id="captionBox"></div>
 
-                <!-- <a href="" class="meeting-icon">
-                        
-                      <img src="assets/img/q-m.png" alt="">
-                      <img src="assets/img/hand.png" alt=""> 
-                        
-                     </a>  -->
-                <div class="section-end-btn">
-                    <button id="endBtnTop" class="ending-but"><span>انهاء</span></button>
-                </div>
-            </div>
-
-
-
-
-            <!-- Upload Section -->
-            <section class="upload-section">
-                <!-- Remote (هيشتغل لاحقًا مع WebRTC) -->
-                <div class="card video-card" id="remoteCard">
-                    <video id="localVideo" autoplay playsinline muted></video>
-
-                </div>
-
-                <!-- Local (الكاميرا هتفتح هنا) -->
-                <div class="card video-card" id="localCard">
-                    <video id="remoteVideo" autoplay playsinline></video>
-
-                </div>
-            </section>
-
-            <nav class="bottom-nav">
-                <button id="btnChat" class="nav-btn" type="button">💬</button>
-                <button id="btnCaptions" class="nav-btn" type="button">🔤</button>
-                <button id="btnSwitch" class="nav-btn" type="button">🔄</button>
-
-                <button id="btnEndBottom" class="nav-btn danger" type="button">⛔</button>
-
-                <button id="btnCam" class="nav-btn" type="button">📷</button>
-                <button id="btnMic" class="nav-btn" type="button">🎤</button>
-            </nav>
-
-        </div>
-        <script src="assets/js/meeting-2.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"></script>
-        <script src="assets/js/call-signalr.js" defer></script>
+  <script src="https://unpkg.com/three@0.146.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.146.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="assets/js/meeting-2.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"></script>
+  <script src="assets/js/normal-call.js" defer></script>
 </body>
-
 </html>
