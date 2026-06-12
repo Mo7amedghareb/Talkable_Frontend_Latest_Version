@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/styles/Otp_page.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>OTP Verification</title>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <div class="otp-card">
+
+      <h2>تأكيد الحساب</h2>
+      <p>تم إرسال كود التحقق إلى بريدك الإلكتروني</p>
+
+      <form id="otpForm">
+
+        <div class="otp-inputs">
+          <input type="text" maxlength="6" id="otp" placeholder="أدخل الكود">
+        </div>
+
+        <button type="submit">تأكيد</button>
+
+        <p id="error"></p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <script src="assets/js/Otp_page.js"></script>
+</body>
+
+</html>

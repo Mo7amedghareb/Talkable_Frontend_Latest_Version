@@ -112,7 +112,8 @@ input:focus {
 /* ================= INPUT WRAPPERS ================= */
 .creatr-account-page-part-right-form-name,
 .creatr-account-page-part-right-form-email,
-.creatr-account-page-part-right-form-password {
+.creatr-account-page-part-right-form-password,
+.creatr-account-page-part-right-form-repassword {
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -122,7 +123,8 @@ input:focus {
 /* ================= ICONS ================= */
 .creatr-account-page-part-right-form-name i,
 .creatr-account-page-part-right-form-email i,
-.creatr-account-page-part-right-form-password i {
+.creatr-account-page-part-right-form-password i,
+.creatr-account-page-part-right-form-repassword i {
   position: absolute;
   left: 10px;
   top: 36px;
