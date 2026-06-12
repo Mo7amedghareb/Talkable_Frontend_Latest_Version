@@ -158,6 +158,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // =========================
   // API
   // =========================
+
   async function sendToAPI(features) {
     try {
       const res = await fetch("http://127.0.0.1:8000/predict", {
@@ -196,6 +197,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     } finally {
       isProcessing = false;
     }
+      console.log("WEB features sample:", features.slice(0, 10));
   }
 
   // =========================

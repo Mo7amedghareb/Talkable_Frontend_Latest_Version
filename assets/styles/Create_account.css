@@ -1,372 +1,175 @@
 :root {
   --sidebar-width: 150px;
   --content-gap: 20px;
+  --primary: #624ECC;
+  --border: #ddd;
+  --text: #333;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
-/* page login */
+
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Tajawal', sans-serif;
 }
 
-body {
-  background-color: #f5f0ff;
+html, body {
+  height: 100%;
   direction: rtl;
-  min-height: 100vh;
-}
-
-a{
-   text-decoration: none; 
-}
-label{
-    direction: rtl;
-}
-input{
-    width:  283px;
-    border-radius: 8px;
-    padding-right: 5px;
-    direction: rtl;
-    height: 32px;
-    border: 2px solid #B0B0B0;
-}
-form p{
-    color:red;
-    display:none;
-}
-
-
-
-/* body */
-html,body{
   background-image: url(../img/backgroung.jpeg);
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  margin: 0;
-  padding: 0;
-  height: 100%;
 }
 
-.page{
-    display: flex;
-    min-height: 100%;
-    
-   
-}
-/* login page-part-left */
-.part-left{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-right: 2px rgba(0, 0, 0, 0.228) solid;
-    width: 50%;    
-}
-.part-left img{
-    width: 331px;
-    height: 170px;
-}
-
-/* login page-part-right */
-.part-right{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-/* انشاء حساب */
-/* creatr-account-page-part */
-/* creatr-account-page-right */
-.creatr-account-page-part-right-titel{
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-}
-.creatr-account-page-part-right-titel-img-icon img{
-     width: 2em;
-    height: 2em;
-}
-
-.creatr-account-page-part-right-form-name{
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    gap: 5px;
-    position: relative;
-    padding-bottom: 15px;
-    
-}
-.creatr-account-page-part-right-form-name i{
-    position: absolute;
-    left: 10px;
-    top: 60%;
-    transform: translateY(-50%);
-    font-size: 1em;
-    color: #888;
-}
-.creatr-account-page-part-right-form-name-label{
-   display: flex;
-   position: relative;
-   width: 100%;
-   direction: rtl;
-}
-.creatr-account-page-part-right-form-name-label a{
-    position: absolute;
-    left: -45px;
-     
-}
-.creatr-account-page-part-right-form-name img{
-    width: 1.2em;
-    height: 1.2em;
-}
-.creatr-account-page-part-right-form-email{
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    gap: 5px;
-    position: relative;
-    padding-bottom: 15px;
-    
-    
-}
-.creatr-account-page-part-right-form-email i{
-    position: absolute;
-    left: 10px;
-    top: 60%;
-    transform: translateY(-50%);
-    font-size: 1em;
-    color: #888;
-}
-.creatr-account-page-part-right-form-email-label{
-   display: flex;
-   position: relative;
-   width: 100%;
-   direction: rtl;
-}
-.creatr-account-page-part-right-form-email-label a{
-    position: absolute;
-    left: -45px;
-     
-}
-.creatr-account-page-part-right-form-email img{
-    width: 1.2em;
-    height: 1.2em;
-}
-.creatr-account-page-part-right-form-password{
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    gap: 5px;
-    position: relative;
-    padding-bottom: 15px;
-}
-.creatr-account-page-part-right-form-password i{
-    position: absolute;
-    left: 10px;
-    top: 60%;
-    transform: translateY(-50%);
-    font-size: 1em;
-    color: #888;
-}
-.creatr-account-page-part-right-form-password-label{
-   display: flex;
-   position: relative;
-   width: 100%;
-   direction: rtl;
-}
-.creatr-account-page-part-right-form-password-label a{
-    position: absolute;
-    left: -45px;
-     
-}
-.creatr-account-page-part-right-form-password img{
-    width: 1.2em;
-    height: 1.2em;
-}
-/* creatr-account-page-part-right-form-radio */
-.creatr-account-page-part-right-form-radio-titel span{
- display: flex;
-   position: relative;
-   width: 100%;
-   direction: rtl;
-}
-.creatr-account-page-part-right-form-radio-titel a {
-        position: absolute;
-    left: -45px;
-}
-.creatr-account-page-part-right-form-radio-titel img{
-     width: 1.2em;
-    height: 1.2em;
-}
-
-.creatr-account-page-radio{
+/* ================= PAGE LAYOUT ================= */
+.page {
   display: flex;
-  gap: 20px;
-  justify-content: center;
-  padding-top: 20px;
+  min-height: 100%;
 }
 
-/* عشان اخفي الداىره احلا مساء عليك يا عم غريب */
-.creatr-account-page-radio input[type="radio"] {
-  display: none;
-}
-
-/* الداىره احلا مساء عليك يا عم غريب */
-.radio-circle {
-  width: 110px;
-  height: 110px;
-  border: 3px solid #B0B0B0;
-  border-radius: 200px;
+/* ================= LEFT SIDE ================= */
+.part-left {
+  width: 50%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-right: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+.part-left img {
+  width: 330px;
+  max-width: 80%;
+}
+
+/* ================= RIGHT SIDE ================= */
+.part-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  padding: 30px;
+}
+
+/* ================= TITLES ================= */
+.part-right-titel,
+.creatr-account-page-part-right-titel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-  background: white;
 }
 
-/* الصورةالي ف الداىره احلا مساء عليك يا عم غريب */
-.radio-circle img {
-  width: 30px;
-  height: 30px;
-}
-
-/* لما بختار احلا مساء عليك يا عم غريب */
-.creatr-account-page-radio input[type="radio"]:checked + .radio-circle {
-  border-color: #4a90e2;
-  background: #e5f1ff;
-  transform: scale(1.05);
-}
-
-.creatr-account-page-part-right-button{
-   margin-top: 20px;
-    position: relative;
-    text-align: center;
-}
-.creatr-account-page-part-right-button-icon{
-    position: absolute;
-    left: -50px;
-}
-.creatr-account-page-part-right-button button{
-    width: 283px;
-    height: 32px;
-    border-radius:1em ;
-    background-color: #624ECC;
-    border: 0;
-    color: white;
-    
-}
-.creatr-account-page-part-right-button img{
-     width: 1.2em;
-    height: 1.2em;
-}
-.creatr-account-page-login{
-    position: relative;
-}
-.creatr-account-page-login-icon{
-    position: absolute;
-    left: -80px;
-}
-
-.creatr-account-page-login img{
-      width: 1.2em;
-    height: 1.2em;
-}
-
-.creatr-account-page-login span{
-    color: rgb(0, 0, 0);
-    font-size:15px;
-    
-    
-}
-.creatr-account-page-login a{
-    color: black;
-    font-weight: bold;
-    
-}
-
-
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Tahoma, Arial;
- 
-  color:var(--text);
-}
-/* ================= title ================= */
-.part-right-titel {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.part-right-titel h1 {
+.part-right-titel h1,
+.creatr-account-page-part-right-titel h1 {
   font-size: 22px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
-/* ================= form ================= */
-#loginForm {
+/* ================= FORM GLOBAL ================= */
+form {
+  width: 100%;
+  max-width: 360px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
-/* ================= input groups ================= */
-.part-right-form-email,
-.part-right-form-password {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  position: relative;
-}
-
-/* label */
+/* ================= LABEL ================= */
 label {
-  font-size: 13px;
+  font-size: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: var(--text);
+  font-weight:600;
 }
 
 
-
-/* inputs */
+/* ================= INPUT ================= */
 input {
+  width: 100%;
   height: 42px;
   border-radius: 8px;
-  border: 1px solid #ddd;
-  padding: 0 8px 0 10px;
+  border: 1px solid var(--border);
+  padding: 0 20px 0 10px;
   font-size: 13px;
+  transition: 0.3s;
 }
 
 input:focus {
   outline: none;
-  border-color: #624ECC;
-  box-shadow: 0 0 0 3px rgba(98,78,204,0.1);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(98, 78, 204, 0.12);
 }
 
+/* ================= INPUT WRAPPERS ================= */
+.creatr-account-page-part-right-form-name,
+.creatr-account-page-part-right-form-email,
+.creatr-account-page-part-right-form-password {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
 
+/* ================= ICONS ================= */
+.creatr-account-page-part-right-form-name i,
+.creatr-account-page-part-right-form-email i,
+.creatr-account-page-part-right-form-password i {
+  position: absolute;
+  left: 10px;
+  top: 36px;
+  font-size: 14px;
+  color: #888;
+}
 
-/* ================= button section ================= */
-.part-right-button {
+/* ================= RADIO ================= */
+.creatr-account-page-radio {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding-top: 10px;
+}
+
+.creatr-account-page-radio input[type="radio"] {
+  display: none;
+}
+
+.radio-circle {
+  width: 400px;
+  height: 160px;
+  border: 2px solid #B0B0B0;
+  border-radius: 50%;
+  background: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.part-right-button button {
+.radio-circle img {
+  width: 28px;
+  height: 28px;
+}
+
+.creatr-account-page-radio input[type="radio"]:checked + .radio-circle {
+  border-color: var(--primary);
+  background: #e5f1ff;
+  transform: scale(1.05);
+}
+
+/* ================= BUTTON ================= */
+button {
   width: 100%;
   height: 42px;
   border: none;
@@ -375,4 +178,39 @@ input:focus {
   color: #fff;
   font-size: 14px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.92;
+}
+
+/* ================= LOGIN LINK ================= */
+.creatr-account-page-login {
+  text-align: center;
+  font-size: 14px;
+}
+
+.creatr-account-page-login a {
+  font-weight: bold;
+  color: #000;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .page {
+    flex-direction: column;
+  }
+
+  .part-left {
+    width: 100%;
+    min-height: 200px;
+    border-right: none;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+  }
+
+  .part-right {
+    width: 100%;
+    padding: 20px;
+  }
 }
