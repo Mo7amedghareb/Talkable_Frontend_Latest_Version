@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   async function sendToAPI(features) {
     try {
-      const res = await fetch("http://127.0.0.1:8000/predict", {
+      const res = await fetch("https://lair-budget-sureness.ngrok-free.dev/predict", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ features }),

@@ -1,6 +1,6 @@
 
 // ===== Config =====
-const API_BASE = "http://localhost:5298";
+const API_BASE = "https://ciliary-pasquale-overhead.ngrok-free.dev";
 
 // ===== Scene Setup =====
 const scene = new THREE.Scene();
@@ -83,7 +83,9 @@ async function loadGLBCached(modelUrl) {
 
   if (loadedModels[modelUrl]) return loadedModels[modelUrl];
 
-  const res = await fetch(modelUrl);
+  const res = await fetch(modelUrl, {
+    headers: { "ngrok-skip-browser-warning": "69420" }
+  });
   if (!res.ok) throw new Error("فشل تحميل الملف");
 
   const contentType = res.headers.get("content-type") || "";
@@ -181,11 +183,32 @@ function playEntryCrossfade(prevMixer, prevAction, nextEntry) {
 }
 
 // ===== Fetch animation URL =====
+// async function fetchWordUrl(word) {
+//   try {
+//     const res = await fetch(
+//       `${API_BASE}/api/Avatar?word=${encodeURIComponent(word)}`,
+//       { method: "GET", headers: { Accept: "application/json" } }
+//     );
+//     if (!res.ok) return null;
+//     const data = await res.json();
+//     return data.url || data.animationPath || null;
+//   } catch {
+//     return null;
+//   }
+// }
+
+
 async function fetchWordUrl(word) {
   try {
     const res = await fetch(
       `${API_BASE}/api/Avatar?word=${encodeURIComponent(word)}`,
-      { method: "GET", headers: { Accept: "application/json" } }
+      {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "ngrok-skip-browser-warning": "69420"  // ← أضف ده
+        }
+      }
     );
     if (!res.ok) return null;
     const data = await res.json();

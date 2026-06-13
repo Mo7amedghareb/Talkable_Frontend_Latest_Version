@@ -1,7 +1,7 @@
 // ===== deaf-call.js =====
 // صفحة الشخص الصم — بيعمل حركات وتتترجم لكلام عند الطرف التاني
 // ===== Avatar From Speech (Three.js) =====
-const API_BASE_AVATAR = "http://localhost:5298"; // زي API_BASE في speech-to-gesture.js
+const API_BASE_AVATAR = "https://ciliary-pasquale-overhead.ngrok-free.dev"; // زي API_BASE في speech-to-gesture.js
 
 let avatarReady = false;
 let sceneA, camA, rendA, clockA;
@@ -13,12 +13,44 @@ let scaleCalibratedA = false;
 let globalScaleA = 0.02;
 let globalYOffsetA = 0.0;
 
+// function initAvatar() {
+//     const container = document.getElementById("avatar-container");
+//     if (!container || typeof THREE === "undefined") {
+//         console.warn("Avatar container or THREE not found");
+//         return;
+//     }
+
+//     sceneA = new THREE.Scene();
+//     sceneA.background = new THREE.Color(0xeeeeee);
+
+//     camA = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+//     camA.position.set(0, 2.2, 3.0);
+//     camA.lookAt(0, 2.0, 0);
+
+//     rendA = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+//     rendA.setSize(200, 200);            // أصغر من صفحة الترجمة العادية
+//     container.appendChild(rendA.domElement);
+
+//     sceneA.add(new THREE.AmbientLight(0xffffff, 2));
+//     const dir = new THREE.DirectionalLight(0xffffff, 3);
+//     dir.position.set(5, 10, 5);
+//     sceneA.add(dir);
+
+//     clockA = new THREE.Clock();
+//     avatarReady = true;
+
+//     (function loop() {
+//         requestAnimationFrame(loop);
+//         const dt = clockA.getDelta();
+//         if (currentMixerA) currentMixerA.update(dt);
+//         rendA.render(sceneA, camA);
+//     })();
+// }
+
 function initAvatar() {
     const container = document.getElementById("avatar-container");
-    if (!container || typeof THREE === "undefined") {
-        console.warn("Avatar container or THREE not found");
-        return;
-    }
+    if (!container) { console.warn("avatar-container not found"); return; }
+    if (typeof THREE === "undefined") { console.warn("THREE not loaded"); return; }
 
     sceneA = new THREE.Scene();
     sceneA.background = new THREE.Color(0xeeeeee);
@@ -28,7 +60,8 @@ function initAvatar() {
     camA.lookAt(0, 2.0, 0);
 
     rendA = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    rendA.setSize(200, 200);            // أصغر من صفحة الترجمة العادية
+    rendA.setSize(220, 220);   // ← نفس حجم الـ container
+    container.innerHTML = "";  // ← امسح أي محتوى قديم
     container.appendChild(rendA.domElement);
 
     sceneA.add(new THREE.AmbientLight(0xffffff, 2));
@@ -38,6 +71,7 @@ function initAvatar() {
 
     clockA = new THREE.Clock();
     avatarReady = true;
+    console.log("✅ Avatar ready");
 
     (function loop() {
         requestAnimationFrame(loop);
@@ -46,6 +80,8 @@ function initAvatar() {
         rendA.render(sceneA, camA);
     })();
 }
+
+
 
 function applyModelTransformA(model, isFirst) {
     if (isFirst) {
@@ -64,11 +100,13 @@ function applyModelTransformA(model, isFirst) {
 
 async function loadGLBCachedA(url) {
     if (url.startsWith("/")) url = API_BASE_AVATAR + url;
-
     if (loadedModelsA[url]) return loadedModelsA[url];
 
-    const res = await fetch(url);
+    const res = await fetch(url, {
+        headers: { "ngrok-skip-browser-warning": "69420" }  // ← أضف
+    });
     if (!res.ok) throw new Error("فشل تحميل الملف");
+    // ... باقي الكود زي ما هو
 
     const contentType = res.headers.get("content-type") || "";
     if (contentType.includes("text/html")) throw new Error("السيرفر رجّع HTML");
@@ -162,7 +200,12 @@ async function fetchWordUrlA(word) {
     try {
         const res = await fetch(
             `${API_BASE_AVATAR}/api/Avatar?word=${encodeURIComponent(word)}`,
-            { headers: { Accept: "application/json" } }
+            {
+                headers: {
+                    Accept: "application/json",
+                    "ngrok-skip-browser-warning": "69420"  // ← أضف
+                }
+            }
         );
         if (!res.ok) return null;
         const data = await res.json();
@@ -197,8 +240,8 @@ async function processQueueA() {
     if (wordQueueA.length) processQueueA();
 }
 document.addEventListener("DOMContentLoaded", async () => {
-    const HUB_URL = "http://localhost:5298/callhub";
-    const AI_API = "http://127.0.0.1:8000/predict";
+    const HUB_URL = "https://ciliary-pasquale-overhead.ngrok-free.dev/callhub";
+    const AI_API = "https://lair-budget-sureness.ngrok-free.dev/predict";
 
     // ===== Room UI =====
     const roomPill = document.getElementById("roomPill");
@@ -547,14 +590,23 @@ document.addEventListener("DOMContentLoaded", async () => {
     // ✅ الشخص الصم بيستقبل كلام من الطرف العادي ويعرضه + يشغّل الأفاتار
     connection.on("ReceiveCaption", (text) => {
         showCaption(text);
+        if (!text) return;
 
-        if (!text || !avatarReady) return;
-
-        text.trim().split(/\s+/).forEach(word => {
-            if (word) wordQueueA.push(word);
+        text.trim().split(/\s+/).filter(Boolean).forEach(word => {
+            wordQueueA.push(word);
         });
 
-        processQueueA();
+        // لو الأفاتار جاهز شغّله، لو لأ استنى ثانية وحاول تاني
+        if (avatarReady) {
+            processQueueA();
+        } else {
+            const retry = setInterval(() => {
+                if (avatarReady) {
+                    clearInterval(retry);
+                    processQueueA();
+                }
+            }, 500);
+        }
     });
 
     try { await connection.start(); }

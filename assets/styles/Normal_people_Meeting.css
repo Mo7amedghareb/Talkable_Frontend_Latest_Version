@@ -102,11 +102,27 @@ body {
 }
 
 /* اخفاء العناصر الغير ظاهرة بالصورة */
-.room-pill,
+/* بعد */
 .toast {
     display: none;
 }
 
+.room-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border: 2px solid #5b3cc4;
+    border-radius: 12px;
+    padding: 8px 16px;
+    font-size: 16px;
+    color: #5b3cc4;
+    font-weight: bold;
+}
+
+.room-pill[hidden] {
+    display: none !important;
+}
 /* =========================
    Video Section
 ========================= */

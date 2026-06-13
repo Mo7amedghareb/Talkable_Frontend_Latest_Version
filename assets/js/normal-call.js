@@ -1,7 +1,7 @@
 // ===== normal-call.js =====
 document.addEventListener("DOMContentLoaded", async () => {
-    const HUB_URL = "http://localhost:5298/callhub";
-    const API_BASE = "http://localhost:5298";
+    const HUB_URL = "https://ciliary-pasquale-overhead.ngrok-free.dev/callhub";
+    const API_BASE = "https://ciliary-pasquale-overhead.ngrok-free.dev";
 
     // ===== Room UI =====
     const roomPill = document.getElementById("roomPill");
@@ -110,7 +110,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     async function loadGLBCached(url) {
         if (url.startsWith("/")) url = API_BASE_AVATAR + url;
         if (loadedModels[url]) return loadedModels[url];
-        const res = await fetch(url);
+
+        const res = await fetch(url, {
+            headers: { "ngrok-skip-browser-warning": "69420" }  // ← أضف
+        });
+        // ... باقي الكود
         if (!res.ok) throw new Error("فشل التحميل");
         const contentType = res.headers.get("content-type") || "";
         if (contentType.includes("text/html")) throw new Error("السيرفر رجّع HTML");
@@ -149,7 +153,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     async function fetchWordUrl(word) {
         try {
-            const r = await fetch(`${API_BASE_AVATAR}/api/Avatar?word=${encodeURIComponent(word)}`, { headers: { Accept: "application/json" } });
+            const r = await fetch(
+                `${API_BASE_AVATAR}/api/Avatar?word=${encodeURIComponent(word)}`,
+                {
+                    headers: {
+                        Accept: "application/json",
+                        "ngrok-skip-browser-warning": "69420"  // ← أضف
+                    }
+                }
+            );
             if (!r.ok) return null;
             const d = await r.json();
             return d.url || d.animationPath || null;

@@ -101,10 +101,26 @@ body {
     font-size: 18px;
 }
 
-/* اخفاء العناصر الغير ظاهرة بالصورة */
-.room-pill,
+/* بعد */
 .toast {
     display: none;
+}
+
+.room-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border: 2px solid #5b3cc4;
+    border-radius: 12px;
+    padding: 8px 16px;
+    font-size: 16px;
+    color: #5b3cc4;
+    font-weight: bold;
+}
+
+.room-pill[hidden] {
+    display: none !important;
 }
 
 /* =========================
@@ -141,6 +157,45 @@ body {
     margin: 20px 0 35px;
 }
 
+/* #avatar-ring {
+    width: 280px;
+    height: 280px;
+    border: 4px solid #6a4cd4;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+} */
+
+/* #avatar-container {
+    width: 220px;
+    height: 220px;
+    background-image: url("../img/avatar.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+} */
+
+/* بعد */
+/* #avatar-container {
+    width: 220px;
+    height: 220px;
+    background: transparent;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#avatar-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+} */
+
+
+
 #avatar-ring {
     width: 280px;
     height: 280px;
@@ -150,16 +205,28 @@ body {
     justify-content: center;
     align-items: center;
     background: white;
+    overflow: hidden;    /* ← المهم */
+    position: relative;
 }
 
 #avatar-container {
-    width: 220px;
-    height: 220px;
-    background-image: url("../img/avatar.png");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+    width: 280px;
+    height: 280px;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+#avatar-container canvas {
+    width: 280px !important;
+    height: 280px !important;
+    display: block;
+}
+
 
 /* =========================
    Bottom Navigation
